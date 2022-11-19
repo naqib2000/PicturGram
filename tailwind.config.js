@@ -1,12 +1,3 @@
-// TODO: add to tailwind config
-//bg-blue-medium -> hex values
-//text-red-primary -> hex values
-//text-gray-base-> hex values
-//border-gray-primary -> hex values
-//text-blue-medium -> hex values
-
-const { th } = require("date-fns/locale");
-
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
