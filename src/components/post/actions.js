@@ -59,6 +59,12 @@ export default function Actions({
             />
           </svg>
           <svg
+            onClick={handleFocus}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                handleFocus();
+              }
+            }}
             className="w-8 text-black-light select-none cursor-pointer focus:outline-none"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -77,7 +83,7 @@ export default function Actions({
       </div>
       <div className="p-4 py-0">
         <p className="font-bold">
-          {likes == "1" ? `${likes} like` : `${likes} likes`}
+          {likes === "1" ? `${likes} like` : `${likes} likes`}
         </p>
       </div>
     </>
