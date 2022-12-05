@@ -141,3 +141,29 @@ export async function isUserFollowingProfile(
   }));
   return response;
 }
+
+export async function toggleFollow(
+  isFollowingProfile,
+  activeUserDocId,
+  profileDocId,
+  profileUserId,
+  followingUserId
+) {
+  //1st param: current user docId
+  //2nd param: followed user docId
+  //3rd param: is the user following this profile
+  await updateLoggedInUserFollowing(
+    activeUserDocId,
+    profileUserId,
+    isFollowingProfile
+  );
+
+  //1st param: current user docId
+  //2nd param: followed user docId
+  //3rd param: is the user following this profile
+  await updateFollowedUserFollowers(
+    profileDocId,
+    followingUserId,
+    isFollowingProfile
+  );
+}
