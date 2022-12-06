@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import { firebase, FieldValue } from "../lib/firebase";
 
 export async function doesUsernameExist(username) {
@@ -24,7 +23,7 @@ export async function getUserByUsername(username) {
   }));
 }
 
-//get user from the firestore where userId ==  userId (passed from the auth)
+//get user from the firestore where userId ===  userId (passed from the auth)
 export async function getUserByUserId(userId) {
   const result = await firebase
     .firestore()
@@ -47,7 +46,7 @@ export async function getSuggestedProfiles(userId, following) {
     .map((user) => ({ ...user.data(), docId: user.id }))
     .filter(
       (profile) =>
-        profile.userId != userId && !following.includes(profile.userId)
+        profile.userId !== userId && !following.includes(profile.userId)
     );
 }
 

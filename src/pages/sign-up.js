@@ -16,7 +16,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
-  const isInvalid = password == "" || emailAddress == "";
+  const isInvalid = password === "" || emailAddress === "";
 
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -65,9 +65,9 @@ export default function SignUp() {
 
   return (
     <div className="container flex mx-auto max-w-screen-md items-center h-screen">
-      <div className="flex w-3/5">
+      <div className="flex w-3/5 mr-12">
         <img
-          src="/images/iphone-with-profile.jpg"
+          src="/images/iphone-with-profile.svg"
           alt="Iphone with PicturGram"
         />
       </div>

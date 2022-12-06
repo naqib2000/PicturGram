@@ -70,7 +70,7 @@ export default function Header({
               type="button"
               onClick={handleToggleFollow}
               onKeyDown={(event) => {
-                if (event.key == "Enter") {
+                if (event.key === "Enter") {
                   handleToggleFollow();
                 }
               }}
