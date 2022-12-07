@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 
 import FirebaseContext from "../context/firebase";
 import * as ROUTES from "../constants/routes";
+import { de } from "date-fns/locale";
 
 export default function Login() {
   const history = useHistory();
@@ -25,6 +26,13 @@ export default function Login() {
       setPassword("");
       setError(error.message);
     }
+  };
+
+  const demoLogin = async () => {
+    await firebase
+      .auth()
+      .signInWithEmailAndPassword("test@gmail.com", "secret");
+    history.push(ROUTES.DASHBOARD);
   };
 
   useEffect(() => {
@@ -74,6 +82,13 @@ export default function Login() {
               }`}
             >
               Log In
+            </button>
+            <button
+              type="button"
+              className="bg-blue-medium text-white w-full rounded h-8 font-bold mt-2"
+              onClick={demoLogin}
+            >
+              Demo Login
             </button>
           </form>
         </div>
