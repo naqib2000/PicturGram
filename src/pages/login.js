@@ -3,7 +3,6 @@ import { Link, useHistory } from "react-router-dom";
 
 import FirebaseContext from "../context/firebase";
 import * as ROUTES from "../constants/routes";
-import { de } from "date-fns/locale";
 
 export default function Login() {
   const history = useHistory();
@@ -81,7 +80,7 @@ export default function Login() {
                 isInvalid && `opacity-50`
               }`}
             >
-              Log In
+              Login
             </button>
             <button
               type="button"
