@@ -138,7 +138,7 @@ export async function isUserFollowingProfile(
     ...item.data(),
     docId: item.id,
   }));
-  return response;
+  return response.userId;
 }
 
 export async function toggleFollow(
