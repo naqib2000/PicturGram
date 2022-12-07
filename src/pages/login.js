@@ -88,7 +88,7 @@ export default function Login() {
               className="bg-blue-medium text-white w-full rounded h-8 font-bold mt-2"
               onClick={demoLogin}
             >
-              Demo Login
+              Demo App
             </button>
           </form>
         </div>
